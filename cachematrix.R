@@ -4,8 +4,7 @@
 ## Write a short comment describing this function
 
 makeCacheMatrix <- function(x = matrix()) {
-	i <- NULL   # initialize the matrix inversion
-    
+	i <- NULL   # initialize the inverse matrix
     
     set <- function(y) {
         x <<- y
@@ -26,15 +25,15 @@ makeCacheMatrix <- function(x = matrix()) {
 
 cacheSolve <- function(x, ...) {
     ## Return a matrix that is the inverse of 'x'
-	i <- x$getInversion()   # get the matrix inversion by calling the function in the list
+	i <- x$getInversion()   # get the inverse matrix by calling the function in the list
     
     if (!is.null(i)) {
-        # The matrix inversion has been calculated
+        # The inverse matrix has been calculated
         message("Getting cached matrix inversion")
         return(i)
     }
     
-    # The matrix inversion doesn't exist, we need to calculate it and return it
+    # The inverse matrix doesn't exist, we need to calculate it and return it
     data <- x$get()
     i <- solve(data, ...)
     x$setInversion(i)
