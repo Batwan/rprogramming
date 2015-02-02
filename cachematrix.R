@@ -1,8 +1,9 @@
-## Put comments here that give an overall description of what your
-## functions do
-
-## Write a short comment describing this function
-
+## This function will follow the following steps:
+##     1. Initialize the inverse matrix by NULL because we didn't calculate it.
+##     2. The 'set' function will set the target matrix x, and reset the inverse matrix by NULL.
+##     3. The 'get' function will return the matrix x.
+##     4. The 'setInversion' will store the calculated inverse matrix.
+##     5. The 'getInversion' will return the stored inverse matrix.
 makeCacheMatrix <- function(x = matrix()) {
 	i <- NULL   # initialize the inverse matrix
     
@@ -20,9 +21,9 @@ makeCacheMatrix <- function(x = matrix()) {
          , getInversion = getInversion)
 }
 
-
-## Write a short comment describing this function
-
+## First, the function will get the inverse matrix from the cached object.
+## Second, if the inverse matrix is not NULL, we can just return the inverse matrix.
+## Third, if the inverse matrix is NULL, we need to calculate it with solve function.
 cacheSolve <- function(x, ...) {
     ## Return a matrix that is the inverse of 'x'
 	i <- x$getInversion()   # get the inverse matrix by calling the function in the list
